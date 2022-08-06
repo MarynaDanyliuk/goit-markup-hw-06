@@ -440,12 +440,31 @@
     <!-- Modal -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <p></p>
         <button type="button" class="modal-close" data-modal-close>
           <svg class="modal-icon" width="11" height="11">
             <use href="./img/icons.svg#icon-close-black"></use>
           </svg>
         </button>
+        <p>
+          <form action="modal-form">
+            <label for="name">Имя</label>
+              <input type="text" name="name" id="name" autofocus />
+          <br />
+            <label for="tel">Телефон</label>
+              <input type="text" name="tel" id="tel" />
+            <br />
+            <label for="mail">Почта</label>
+              <input type="text" name="mail" id="mail" />
+            <br />
+            <label for="comment">Комментарий</label>
+            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+            <br />
+            <input type="checkbox" name="mailing" value="mailing" id="mailing" />
+            <label for="">Соглашаюсь с рассылкой и принимаю <span>Условия договора</span></label>
+            <br />
+            <button type="submit">Отправить</button>
+          </form>
+        </p>
       </div>
     </div>
     <script src="./js/modal.js"></script>
