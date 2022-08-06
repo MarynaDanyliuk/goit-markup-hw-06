@@ -445,28 +445,59 @@
             <use href="./img/icons.svg#icon-close-black"></use>
           </svg>
         </button>
-        <p>
-          <form action="modal-form">
+        <div class="modal-form">
+          <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+          <form class="js-submit-form">
             <label for="name">Имя</label>
-              <input type="text" name="name" id="name" autofocus />
-          <br />
+            <input type="text" name="name" id="name" placeholder="" />
+            <br />
             <label for="tel">Телефон</label>
-              <input type="text" name="tel" id="tel" />
+            <input type="tel" name="tel" id="tel" />
             <br />
             <label for="mail">Почта</label>
-              <input type="text" name="mail" id="mail" />
+            <input type="email" name="mail" id="mail" />
             <br />
             <label for="comment">Комментарий</label>
-            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-            <br />
-            <input type="checkbox" name="mailing" value="mailing" id="mailing" />
-            <label for="">Соглашаюсь с рассылкой и принимаю <span>Условия договора</span></label>
-            <br />
-            <button type="submit">Отправить</button>
+            <textarea
+              name="comment"
+              id="comment"
+              cols="30"
+              rows="10"
+              placeholder="Введите текст"
+            ></textarea>
+            <div class="checkbox">
+              <input
+                class="check-input"
+                type="checkbox"
+                name="mailing"
+                value="mailing"
+                id="mailing"
+              />
+              <label for="mailing">
+                <svg class="icon-checkbox" width="16" height="15">
+                  <use href="./img/icons.svg#icon-checkbox"></use></svg
+                >Соглашаюсь с рассылкой и принимаю
+                <a href="" class="checkbox-link">Условия договора</a></label
+              >
+            </div>
+            <button type="submit" class="button primary">Отправить</button>
           </form>
-        </p>
+        </div>
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-submit-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log("${name}: ${value}")
+            );
+          });
+      })();
+    </script>
   </body>
 </html>
