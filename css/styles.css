@@ -388,22 +388,61 @@ a {
 
 /* Form */
 
-input {
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 448px;
-  height: 40px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+  /* outline: 2px solid red; */
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /* outline: 2px solid green; */
   margin-bottom: 10px;
 }
 
-label {
-  margin-bottom: 4px;
+.form-input {
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 11px 12px;
+}
+
+.form-input:hover,
+.form-input:focus {
+  cursor: pointer;
+  border: 1px solid var(--accent-txt-color);
+}
+
+.form-input:hover + .input-icon,
+.form-input:focus + .input-icon {
+  fill: var(--button-bg-color);
+}
+
+.input-icon:hover,
+.input-icon:focus {
+  cursor: pointer;
+  fill: var(--button-bg-color);
+}
+
+/* .input-icon:hover + .form-input,
+.input-icon:focus + .form-input {
+  cursor: pointer;
+  fill: var(--button-bg-color);
+} */
+
+.form-label {
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--primary-txt-color);
+  margin-bottom: 4px;
 }
 
-textarea {
+.comment-area {
   resize: none;
   width: 448px;
   height: 120px;
@@ -411,7 +450,6 @@ textarea {
   font-family: inherit;
   line-height: 1.16;
   letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -419,9 +457,20 @@ textarea {
   margin-bottom: 20px;
 }
 
+.comment-area::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.input-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+}
+
 .checkbox {
-  display: flex;
-  justify-content: center;
+  /* border: 2px solid red; */
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
 }
 
@@ -438,6 +487,7 @@ textarea {
 }
 
 .icon-checkbox {
+  display: inline-block;
   fill: var(--title-txt-color);
   margin-right: 8px;
 }
@@ -450,6 +500,7 @@ textarea {
 
 .icon-checkbox:active {
   cursor: pointer;
+  background-color: var(--accent-txt-color);
   fill: var(--accent-txt-color);
 }
 
@@ -701,7 +752,8 @@ textarea {
   margin-left: 70px;
 }
 
-.footer-social-net .title {
+.footer-social-net .title,
+.footer-mailing .title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -733,6 +785,34 @@ textarea {
   fill: var(--address-txt);
 }
 
+.footer-mailing {
+  margin-left: 93px;
+}
+
+.footer-form {
+  display: flex;
+}
+
+.footer-form .button.primary {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  padding: 10px 29px;
+}
+
+.footer-form .form-input {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding: 15px 16px;
+  background-color: transparent;
+}
+
+.footer-btn-icon {
+  margin-left: 10px;
+}
 /* Button */
 
 .button {
