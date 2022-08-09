@@ -458,7 +458,7 @@
           </svg>
         </button>
         <div class="modal-form">
-          <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+          <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
           <form class="form js-submit-form">
             <p class="form-field">
               <label for="name" class="form-label">Имя</label>
@@ -493,19 +493,23 @@
               ></textarea>
             </p>
             <p class="checkbox">
-              <input
-                class="check-input"
-                type="checkbox"
-                name="mailing"
-                value="mailing"
-                id="mailing"
-              />
               <label for="mailing">
+                <input
+                  class="check-input"
+                  type="checkbox"
+                  name="mailing"
+                  value="mailing"
+                  id="mailing"
+                />
+                <svg class="icon-checkbox-check" width="16" height="15">
+                  <use href="./img/icons.svg#icon-check-1"></use>
+                </svg>
                 <svg class="icon-checkbox" width="16" height="15">
-                  <use href="./img/icons.svg#icon-checkbox"></use></svg
-                >Соглашаюсь с рассылкой и принимаю
-                <a href="" class="checkbox-link">Условия договора</a></label
-              >
+                  <use href="./img/icons.svg#icon-checkbox"></use>
+                </svg>
+                Соглашаюсь с рассылкой и принимаю
+                <a href="" class="checkbox-link">Условия договора</a>
+              </label>
             </p>
             <button type="submit" class="button primary">Отправить</button>
           </form>
